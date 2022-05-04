@@ -4,5 +4,5 @@ formulario de creacion de empleados
 
     @include('empleado.form')
     
-    <input type="submit" value="Guardar Datos"> 
+     
 </form>
