@@ -1,5 +1,7 @@
 
 
+<h1>{{ $modo }} empleado</h1>
+
 <label for="id">Rut</label>
     <input type="text" name="id" value="{{ isset($empleado->id)?$empleado->id:'' }}" id="id">
     <br>
@@ -24,6 +26,6 @@
     <input type="text" name="NumeroLicencia" value="{{ isset($empleado->NumeroLicencia)?$empleado->NumeroLicencia:'' }}" id="NumeroLicencia">
     <br>
 
-    <input type="submit" value="Guardar Datos">
+    <input type="submit" value="{{ $modo }} Datos">
 
     <a href="{{ url('empleado/') }}">Regresar</a>
