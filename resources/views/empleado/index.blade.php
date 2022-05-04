@@ -15,13 +15,21 @@ mostrar la lista de empleados
     <tbody>
         @foreach($empleados as $empleado)
         <tr>
-            <td>{{ $empleado->rut }}</td>
+            <td>{{ $empleado->id }}</td>
             <td>{{ $empleado->Nombre }}</td>
             <td>{{ $empleado->ApellidoPaterno }}</td>
             <td>{{ $empleado->ApellidoMaterno }}</td>
             <td>{{ $empleado->Patente }}</td>
             <td>{{ $empleado->NumeroLicencia }}</td>
-            <td>Editar | Borrar</td>
+            <td>Editar | 
+
+            <form action="{{ url('/empleado/'.$empleado->id ) }}" method="post">
+            @csrf
+            {{ method_field('DELETE') }}
+          
+            <input type="submit" onclick="return confirm('¿Quieres Borrar?')" value="Borrar">
+            </form>
+            </td>
         </tr>
         @endforeach
     </tbody>
