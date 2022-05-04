@@ -1,5 +1,7 @@
 formulario de creacion de empleados
-<form action="" method="post" >
+<form action="{{ url('/empleado') }}" method="post" >
+    @csrf
+
     <label for="Rut">Rut</label>
     <input type="text" name="Rut" id="Rut">
     <br>
@@ -25,5 +27,5 @@ formulario de creacion de empleados
     <br>
 
     
-    <input type="submit" name="Enviar" id="Enviar"> 
+    <input type="submit" value="Guardar Datos"> 
 </form>
