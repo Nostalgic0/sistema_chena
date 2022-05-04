@@ -41,7 +41,9 @@ class EmpleadoController extends Controller
         //
         $datosEmpleado = request()->except('_token');
         Empleado::insert($datosEmpleado);
-        return response()->json($datosEmpleado);
+        //return response()->json($datosEmpleado);
+        return redirect('empleado')->with('mensaje','Empleado agregado con éxito');
+
     }
 
     /**
@@ -97,6 +99,6 @@ class EmpleadoController extends Controller
     {
         //
         Empleado::destroy($id);
-        return redirect('empleado');
+        return redirect('empleado')->with('mensaje','Empleado borrado');
     }
 }
