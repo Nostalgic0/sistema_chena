@@ -39,6 +39,22 @@ class EmpleadoController extends Controller
     public function store(Request $request)
     {
         //
+        $campos=[
+         // 'id'=>'required|id|',
+          'Nombre'=>'required|string|max:100',
+          'ApellidoPaterno'=>'required|string|max:100',
+          'ApellidoMaterno'=>'required|string|max:100',
+          'Patente'=>'required|string|max:100',
+          'NumeroLicencia'=>'required|integer',  
+
+        ];
+        $mensaje=[
+            'required'=>'El :attribute es requerido',
+
+        ];
+        $this->validate($request, $campos,$mensaje);
+
+
         $datosEmpleado = request()->except('_token');
         Empleado::insert($datosEmpleado);
         //return response()->json($datosEmpleado);
